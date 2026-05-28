@@ -113,14 +113,6 @@ npm test -- --coverage
 - `npm run test:watch` — Watch mode
 - `npm test -- --coverage` — Coverage report
 
-## Viva/Interview Prep
-
-- **Jest**: How does Jest isolate tests? Why use `jest.fn()`?
-- **RTL**: Why test from the user's perspective? What does `screen` do?
-- **Mocking**: Why mock fetch? How do you reset mocks?
-- **Coverage**: What is branch coverage? Why is it important?
-- **jsdom**: What are jsdom's limitations vs. a real browser?
-- **userEvent vs fireEvent**: Which is more realistic and why?
 
 ## Author
 
