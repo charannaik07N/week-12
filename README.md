@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js QA Automation Assignment
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project demonstrates enterprise-level QA automation for a Next.js (App Router) application using **Jest** and **React Testing Library** (RTL). It covers:
+
+- Component unit and interaction tests
+- Async API mocking
+- jsdom environment
+- Coverage reporting (≥80%)
+- Clean, reusable, accessible UI with Tailwind CSS
+
+## Folder Structure
+
+```
+/components
+  Button.js
+  Card.js
+  Counter.js
+  Input.js
+  UserList.js
+/__tests__
+  Button.test.js
+  Card.test.js
+  Counter.test.js
+  Input.test.js
+  UserList.test.js
+jest.config.js
+jest.setup.js
+README.md
+```
+
+## Setup & Installation
+
+1. **Clone the repo**
+   ```bash
+   git clone <repo-url>
+   cd week-12
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+## Running the App
+
+Start the Next.js dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to view the UI playground.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Running Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run all tests:
 
-## Learn More
+```bash
+npm test
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run tests in watch mode:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run test:watch
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run tests with coverage:
 
-## Deploy on Vercel
+```bash
+npm test -- --coverage
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Coverage Report
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Coverage is enforced at ≥80% for branches, statements, functions, and lines.
+- After running coverage, open `coverage/lcov-report/index.html` for a detailed report.
+
+## Project Process & Explanation
+
+### 1. **Jest + RTL Setup**
+
+- Configured Jest with `jest.config.js` for jsdom, RTL setup, and coverage thresholds.
+- `jest.setup.js` imports RTL matchers for better assertions.
+
+### 2. **Component Development**
+
+- Built 5 reusable components: Button, Card, Input, Counter, UserList.
+- All components are functional, use React hooks, and are styled with Tailwind CSS.
+
+### 3. **Testing Strategy**
+
+- **Unit tests**: Each component is tested for rendering, props, and accessibility.
+- **Interaction tests**: Used `userEvent` and `fireEvent` to simulate real user actions (click, type).
+- **Async tests**: UserList fetches data; tests mock `fetch` for loading, success, and error states.
+- **Branch coverage**: All code paths (including error/fallback) are tested.
+
+### 4. **Mocking & Isolation**n- All network requests are mocked using `jest.fn()` and `global.fetch`.
+
+- No real HTTP calls are made; tests are deterministic and CI-friendly.
+
+### 5. **CI/CD & Enterprise Practices**
+
+- Scripts (`test`, `test:watch`, `test:coverage`) match enterprise CI/CD expectations.
+- Coverage thresholds prevent regressions.
+- All tests run in jsdom for fast, browser-like simulation.
+
+## Key Commands
+
+- `npm run dev` — Start Next.js app
+- `npm test` — Run all tests
+- `npm run test:watch` — Watch mode
+- `npm test -- --coverage` — Coverage report
+
+## Viva/Interview Prep
+
+- **Jest**: How does Jest isolate tests? Why use `jest.fn()`?
+- **RTL**: Why test from the user's perspective? What does `screen` do?
+- **Mocking**: Why mock fetch? How do you reset mocks?
+- **Coverage**: What is branch coverage? Why is it important?
+- **jsdom**: What are jsdom's limitations vs. a real browser?
+- **userEvent vs fireEvent**: Which is more realistic and why?
+
+## Author
+
+- QA Automation Assignment — Next.js, Jest, RTL, Tailwind CSS
+
+---
+
+**For any issues, please open an issue or contact the maintainer.**
