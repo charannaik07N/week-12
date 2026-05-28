@@ -52,6 +52,12 @@ npm run dev
 
 Visit [http://localhost:3000](http://localhost:3000) to view the UI playground.
 
+## Live Demo
+
+A deployed demo of this assignment is available at:
+
+[https://week-12-sigma.vercel.app/](https://week-12-sigma.vercel.app/)
+
 ## Running Tests
 
 Run all tests:
@@ -112,7 +118,6 @@ npm test -- --coverage
 - `npm test` — Run all tests
 - `npm run test:watch` — Watch mode
 - `npm test -- --coverage` — Coverage report
-
 
 ## Author
 
